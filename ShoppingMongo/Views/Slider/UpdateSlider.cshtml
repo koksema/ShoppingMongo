@@ -1,0 +1,31 @@
+﻿@model ShoppingMongo.Dtos.SliderDtos.GetSliderDto
+
+@{
+    ViewData["Title"] = "UpdateSlider";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Slider Güncelle</h1>
+
+<div class="container">
+    <br /><br />
+    <form method="post">
+        <input type="hidden" asp-for="SliderId" />
+        <label>Başlık</label>
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Başlık" asp-for="Title">
+        </div>
+        <br />
+        <label>Alt Başlık</label>
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Alt Başlık" asp-for="SubTitle">
+        </div>
+        <br />
+        <label>Resim</label>
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Resim" asp-for="SliderImageUrl">
+        </div>
+        <br />
+        <button class="btn btn-primary form-control">Ekle</button>
+    </form>
+</div>

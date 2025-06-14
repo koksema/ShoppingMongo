@@ -1,0 +1,24 @@
+﻿@model ShoppingMongo.Dtos.ProductImageDtos.CreateProductImageDto
+
+@{
+    ViewData["Title"] = "CreateProductImage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Ürün Resmi Ekle</h1>
+<div class="container">
+    <br /><br />
+    <form method="post">
+        <label>Resim</label>
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Resim URL" asp-for="ProductImageUrl">
+        </div>
+        <br />
+        <select asp-for="ProductId" class="form-control" asp-items="ViewBag.v">
+            <option value="">Seç</option>
+        </select>
+        <br />
+        <button class="btn btn-primary form-control">Ekle</button>
+    </form>
+</div>
+

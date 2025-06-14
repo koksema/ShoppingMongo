@@ -1,0 +1,25 @@
+﻿@model ShoppingMongo.Dtos.CategoryDtos.CreateCategoryDto
+
+@{
+    ViewData["Title"] = "CreateCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h1>Yeni Kategori Ekle</h1>
+<div class="container">
+    <br /><br />
+    <form method="post">
+        <label>Kategori Adı</label>
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Kategori Adı" asp-for="CategoryName">
+        </div>
+        <br />
+        <label>Resim</label>
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Resim" asp-for="CategoryImageUrl">
+        </div>
+        <br />
+        <button class="btn btn-primary form-control">Ekle</button>
+    </form>
+</div>

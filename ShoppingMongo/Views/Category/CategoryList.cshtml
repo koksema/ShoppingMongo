@@ -1,0 +1,34 @@
+﻿@model List<ShoppingMongo.Dtos.CategoryDtos.ResultCategoryDto>
+@{
+    ViewData["Title"] = "CategoryList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<h1>Kategoriler</h1>
+
+
+<div class="container">
+    <br /><br />
+    <table class="table table-bordered">
+        <tr>
+            <th class="text-center">#</th>
+            <th class="text-center">Kategori Adı</th>
+            <th class="text-center">Resim</th>
+            <th class="text-center">Sil</th>
+            <th class="text-center">Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <th class="text-center">@count</th>
+                <th class="text-center">@item.CategoryName</th>
+                <th class="text-center">@item.CategoryImageUrl</th>
+                <td><a href="/Category/DeleteCategory/@item.CategoryId" class=" btn btn-danger form-control">Sil</a></td>
+                <td><a href="/Category/UpdateCategory/@item.CategoryId" class=" btn btn-info form-control">Güncelle</a></td>
+            </tr>
+        }
+    </table>
+    <a href="/Category/CreateCategory/" class="btn btn-primary form-control">Yeni Kategori</a>
+</div>

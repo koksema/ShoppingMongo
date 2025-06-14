@@ -1,0 +1,36 @@
+﻿@model List<ShoppingMongo.Dtos.SliderDtos.ResultSliderDto>
+
+@{
+    ViewData["Title"] = "SliderList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+
+}
+
+<h1>Sliderlar</h1>
+<div class="container">
+    <br /><br />
+    <table class="table table-bordered">
+        <tr>
+            <th class="text-center">#</th>
+            <th class="text-center">Başlık</th>
+            <th class="text-center">Alt Başlık</th>
+            <th class="text-center">Resim</th>
+            <th class="text-center">Sil</th>
+            <th class="text-center">Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <th class="text-center">@count</th>
+                <th class="text-center">@item.Title</th>
+                <th class="text-center">@item.SubTitle</th>
+                <th class="text-center">@item.SliderImageUrl</th>
+                <td><a href="/Slider/DeleteSlider/@item.SliderId" class=" btn btn-danger form-control">Sil</a></td>
+                <td><a href="/Slider/UpdateSlider/@item.SliderId" class=" btn btn-info form-control">Güncelle</a></td>
+            </tr>
+        }
+    </table>
+    <a href="/Slider/CreateSlider/" class="btn btn-primary form-control">Yeni Slider</a>
+</div>

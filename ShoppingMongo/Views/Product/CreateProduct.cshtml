@@ -1,0 +1,54 @@
+﻿@model ShoppingMongo.Dtos.ProductDtos.CreateProductDto
+@{
+    ViewData["Title"] = "CreateProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Yeni Ürün Ekle</h1>
+<div class="container">
+    <br /><br />
+    <form method="post">
+        <label>Ürün Adı</label>
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Ürün Adı" asp-for="ProductName">
+        </div>
+        <br />
+        <label>Resim</label>
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Resim" asp-for="ProductImage">
+        </div>
+        <br />
+        <label>Cinsiyet</label>
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Cinsiyet" asp-for="Gender">
+        </div>
+        <br />
+        <label>Açıklama</label>
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Açıklama" asp-for="Description">
+        </div>
+        <br />
+        <label>Fiyat</label>
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Fiyat" asp-for="ProductPrice">
+        </div>
+        <br />
+        <label>Durum</label>
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Durum" asp-for="Status">
+        </div>
+        <br />
+        <label>Stok</label>
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Stok" asp-for="StockCount">
+        </div>
+        <br />
+        <label>Kategori</label>
+        <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.v">
+            <option value="">Seç</option>
+        </select>
+        <br />
+        <button class="btn btn-primary form-control">Ekle</button>
+    </form>
+</div>
+
